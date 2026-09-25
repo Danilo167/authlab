@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: authlab-postgres
+    environment:
+      POSTGRES_DB: authlab
+      POSTGRES_USER: authlab
+      POSTGRES_PASSWORD: authlab
+    ports:
+      - "5433:5432"
+    volumes:
+      - authlab_data:/var/lib/postgresql/data
+
+volumes:
+  authlab_data:
